@@ -5,6 +5,7 @@ import { Typography } from '@mui/material';
 import s from './styles.module.scss';
 import { TCelebGalleryItem } from '~/lib/components/types';
 import { useCelebContext } from '~/lib/components/StaticPropsContextProvider';
+import clsx from 'clsx';
 
 export const CelebGallery: React.FC<{
   celebGalleryItems: TCelebGalleryItem[];
@@ -19,7 +20,7 @@ export const CelebGallery: React.FC<{
 
           return (
             <a
-              className="celeb-card overflow-hidden rounded-xl w-full"
+              className={clsx(s.celebCard, 'overflow-hidden rounded-xl w-full')}
               href={`/${celebData.slug}`}
               key={celebData.slug}
             >
@@ -48,7 +49,6 @@ export const CelebGallery: React.FC<{
                 {/* overlay */}
                 <div className="pointer-events-none absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent via-transparent to-black block" />
               </span>
-              
             </a>
           );
         })}

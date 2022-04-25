@@ -1,5 +1,13 @@
 @import '~lib/components/common';
 
+.celebCard img {
+  @apply scale-100 transform transition-all duration-[400ms];
+}
+
+.celebCard:hover img {
+  @apply scale-110;
+}
+
 .CelebGallery {
   display: flex;
   justify-content: space-around;
